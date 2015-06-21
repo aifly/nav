@@ -1,53 +1,24 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
 <head>
 	<meta charset="utf-8"/>
+    <link href="css/index.min.css" rel="stylesheet" />
 	<title>导航</title>
-	<style>
-
-	*{margin: 0;padding:0;}
-	ul,li{list-style: none;}
-	html,body{height: 100%;overflow: hidden;}
-	body{
-		background:-webkit-gradient(linear, 0 0, 0 100%, from(#298b67), to(#0e2c21));
-	}
-	a{text-decoration: none;color: #000;}
-	nav{width:960px;height: 40px;line-height: 40px;margin: 100px auto;border:1px solid #ccc;}
-	nav ul{
-		display: -webkit-box;
-		width: 100%;
-	}
-	nav ul li{
-		-webkit-box-flex:1;
-		text-align: center;
-	}
-	nav ul li a{
-		display: block;
-		width: 100%;
-		height: 100%;
-		font-family: "fzxjl";
-		font-size: 24px;
-		font-weight: bold;
-	}
-	nav ul li a:hover{
-		background: -webkit-gradient(linear,0 0,0 100%,from(#7c1d79),to(#390b37));
-		color: #fff;
-	}
-	@font-face{
-		font-family: "fzxjl";
-		src:url("fonts/fzxjl.ttf") format("truetype");
-	}
-	</style>
 </head>
-<body>
-	<nav>
-		<ul>
-			<li><a href="#">首页</a></li>
-			<li><a href="#">前端资讯</a></li>
-			<li><a href="#">html5</a></li>
-			<li><a href="#">css3</a></li>
-			<li><a href="#">javascript</a></li>
-		</ul>
-	</nav>
+<body ng-controller="myCtrl">
+    <nav>
+        <ul>
+            <li><a href="javascript:void(0)" ng-click="$location.path('index')">首页</a></li>
+            <li><a href="javascript:void(0)" ng-click="$location.path('news')">前端资讯</a></li>
+            <li><a href="javascript:void(0)" ng-click="$location.path('html5')">html5</a></li>
+            <li><a href="javascript:void(0)" ng-click="$location.path('css3')">css3</a></li>
+            <li><a href="javascript:void(0)" ng-click="$location.path('js')">javascript</a></li>
+        </ul>
+    </nav>
+    <div class="container" ng-view>
+
+    </div>
+    <script src="js/angular.min.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
